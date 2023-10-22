@@ -1,0 +1,8 @@
+/lib/
+/.idea/
+/src/main/
+/target/
+/src/test/java/homework/cucumber/resources/features/
+/src/test/java/login.java
+/src/test/java/homework/cucumber/stepdefs/trial.java
+/src/test/resources/homework/test.feature
