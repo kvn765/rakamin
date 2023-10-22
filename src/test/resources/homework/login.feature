@@ -55,4 +55,4 @@ Feature: transaction
       Then diarahkan ke homepage
       When klik burger
       And klik logout
-      Then ada di halaman login saucedemo
+      Then validate logout

@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 //@CucumberOptions(plugin = {"pretty"})
 @CucumberOptions(
-//        tags = "@Positive",
+//        tags = "@x",
         plugin = {"pretty",
                 "html:target/HTML_report.html"
         },

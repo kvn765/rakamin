@@ -44,6 +44,7 @@ public class login {
     public void diarahkanKeHomepage() {
         String title = driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[1]/div[2]/div")).getText();
         Assert.assertEquals("Swag Labs", title);
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
     }
 
     @And("masukan password invalid")
@@ -65,7 +66,7 @@ public class login {
 
     @Given("ada di halaman inventory")
     public void adaDiHalamanInventory() {
-        driver.get("https://www.saucedemo.com/inventory.html");
+//        driver.get("https://www.saucedemo.com/inventory.html");
         String menu = driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[2]/span")).getText();
         Assert.assertEquals("Products",menu);
     }
@@ -96,5 +97,25 @@ public class login {
     public void counterDiCartJadiNol() {
         boolean status = driver.findElement(By.xpath("//*[@id=\"shopping_cart_container\"]/a")).isDisplayed();
         Assert.assertEquals(true,status);
+    }
+
+    @When("klik burger")
+    public void klikBurger() {
+        driver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]")).click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+    }
+
+    @And("klik logout")
+    public void klikLogout() {
+        driver.findElement(By.id("logout_sidebar_link")).click();
+//        driver.findElement(ByName("Logout")).click();
+//        driver.findElement(By.xpath("//*[@id=\"logout_sidebar_link\"]")).click();
+    }
+
+    @Then("validate logout")
+    public void validateLogout() {
+        String  name = driver.getTitle();
+        Assert.assertEquals("Swag Labs",name);
+
     }
 }
