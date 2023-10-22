@@ -45,3 +45,14 @@ Feature: transaction
     When klik tombol remove
     Then counter di cart jadi nol
     And stop sesi
+
+    @Positive
+    Scenario: logout
+      Given ada di halaman login saucedemo
+      When masukan username valid
+      And masukan password valid
+      And klik tombol login
+      Then diarahkan ke homepage
+      When klik burger
+      And klik logout
+      Then ada di halaman login saucedemo
